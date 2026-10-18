@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bandeira de Minas Gerais</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="400" height="300"> </canvas>
+    <script>
+      //canvas e contexto
+      let c = document.getElementById("myCanvas");
+      let context = c.getContext("2d");
+
+      // Fundo preto
+      context.fillStyle = "black";
+      context.fillRect(0, 0, 250, 150);
+      // Desenha o retângulo branco
+      context.fillStyle = "white";
+      context.fillRect(20, 15, 210, 120);
+
+      // Triângulo vermelho
+
+      context.fillStyle = "red";
+      context.beginPath();
+
+      context.moveTo(105, 40);
+      context.lineTo(72, 100);
+      context.lineTo(138, 100);
+      context.lineTo(105, 40);
+
+      context.fill();
+      context.closePath();
+
+      // Texto "LIBERTAS"
+
+      context.save();
+      context.fillStyle = "black";
+      context.font = "8px Arial";
+
+      // Posiciona o texto
+      context.translate(78, 86);
+      // Gira o texto
+      context.rotate(-1.05);
+      // Escreve
+      context.fillText("LIBERTAS", 0, 0);
+      context.restore();
+
+      // Texto "QUAE SERA"
+
+      context.save();
+      context.fillStyle = "black";
+      context.font = "8px Arial";
+
+      // Posiciona o texto
+      context.translate(113, 52);
+      context.rotate(1.05);
+      context.fillText("QUAE SERA", 0, 0);
+      context.restore();
+
+      // Texto "TAMEN"
+      context.save();
+      context.fillStyle = "black";
+      context.font = "8px Arial";
+
+      context.translate(92, 108);
+      context.fillText("TAMEN", 0, 0);
+    </script>
+  </body>
+</html>

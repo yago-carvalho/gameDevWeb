@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retângulo Colorido</title>
+  </head>
+  <body>
+    <canvas id="meu_canvas" width="300" height="300"></canvas>
+    <script>
+      // Canvas e contexto
+      let canvas = document.getElementById("meu_canvas");
+      let context = canvas.getContext("2d");
+
+      //Preenchando o vermelho
+      context.fillStyle = "red";
+      context.fillRect(50, 50, 100, 100);
+
+      // Contorno azul, com espessura de 3px
+      context.lineWidth = 3;
+      context.strokeStyle = "blue";
+      context.strokeRect(50, 50, 100, 100);
+
+      //Preenchando verde
+      context.fillStyle = "green";
+      context.fillRect(150, 150, 100, 100);
+
+      // Contorno amarelo, com espessura de 3px
+      context.lineWidth = 3;
+      context.strokeStyle = "yellow";
+      context.strokeRect(150, 150, 100, 100);
+    </script>
+  </body>
+</html>
