@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bandeira o Brasil</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="500" height="300"> </canvas>
+    <script>
+      //canvas e contexto
+      let c = document.getElementById("myCanvas");
+      let context = c.getContext("2d");
+
+      // Fundo verde
+      context.fillStyle = "green";
+      context.fillRect(0, 0, 500, 250);
+
+      // Desenha o losango amarelo
+      context.fillStyle = "yellow";
+      context.beginPath();
+      context.moveTo(250, 35);
+      context.lineTo(60, 125);
+      context.lineTo(250, 215);
+      context.lineTo(440, 125);
+
+      context.fill();
+      context.closePath();
+
+      // Círculo azul
+      context.fillStyle = "blue";
+      context.beginPath();
+      context.arc(250, 125, 60, 0, 2 * Math.PI);
+      context.fill();
+
+      context.save();
+
+      // Máscara círculo azul
+      context.beginPath();
+      context.arc(250, 125, 60, 0, 2 * Math.PI);
+      context.clip();
+
+      // Faixa branca
+      context.fillStyle = "white";
+      context.fillRect(190, 110, 120, 16);
+
+      // Texto "Ordem e Progresso"
+      context.save();
+      context.fillStyle = "green";
+      context.font = "9px Arial";
+
+      // Posiciona o texto
+      context.translate(200, 122);
+
+      // Escreve
+      context.fillText("ORDEM E PROGRESSO", 0, 0);
+      context.restore();
+    </script>
+  </body>
+</html>
