@@ -1,0 +1,76 @@
+/* Configurações gerais */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    text-align: center;
+}
+
+
+/* Cabeçalho */
+
+header {
+    background-color: #222;
+    color: white;
+    padding: 30px;
+}
+
+header h1 {
+    color: #00e88f;
+}
+
+header p {
+    font-size: 18px;
+}
+
+
+/* Conteúdo principal */
+
+main {
+    background-color: white;
+    width: 80%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+main h2 {
+    color: #333;
+}
+
+main p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* Botão */
+
+button {
+    background-color: #00e88f;
+    color: #111;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00c878;
+}
+
+
+/* Rodapé */
+
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+}

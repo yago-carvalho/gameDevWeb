@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário HTML5</title>
+
+    <!-- CSS EXTERNO -->
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Formulário HTML5</h1>
+      <p>Exemplo com os principais elementos de formulário.</p>
+    </header>
+
+    <main>
+      <h2>Cadastro de Aluno</h2>
+
+      <form action="#" method="post">
+        <!-- TEXT -->
+        <label for="nome">Nome:</label>
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          placeholder="Digite seu nome"
+          required
+        />
+
+        <!-- EMAIL -->
+        <label for="email">E-mail:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="seuemail@email.com"
+          required
+        />
+
+        <!-- PASSWORD -->
+        <label for="senha">Senha:</label>
+        <input
+          type="password"
+          id="senha"
+          name="senha"
+          placeholder="Digite sua senha"
+        />
+
+        <!-- NUMBER -->
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" min="1" max="120" />
+
+        <!-- DATE -->
+        <label for="nascimento">Data de nascimento:</label>
+        <input type="date" id="nascimento" name="nascimento" />
+
+        <!-- TIME -->
+        <label for="horario">Horário:</label>
+        <input type="time" id="horario" name="horario" />
+
+        <!-- COLOR -->
+        <label for="cor">Cor favorita:</label>
+        <input type="color" id="cor" name="cor" />
+
+        <!-- RANGE -->
+        <label for="nivel"> Nível de conhecimento: </label>
+
+        <input
+          type="range"
+          id="nivel"
+          name="nivel"
+          min="0"
+          max="10"
+          value="5"
+        />
+
+        <!-- SELECT -->
+        <label for="curso">Curso:</label>
+
+        <select id="curso" name="curso">
+          <option value="">Selecione um curso</option>
+
+          <option value="ads">Análise e Desenvolvimento de Sistemas</option>
+
+          <option value="cc">Ciência da Computação</option>
+
+          <option value="redes">Redes de Computadores</option>
+        </select>
+
+        <!-- RADIO -->
+        <fieldset>
+          <legend>Turno:</legend>
+
+          <label>
+            <input type="radio" name="turno" value="manha" />
+            Manhã
+          </label>
+
+          <label>
+            <input type="radio" name="turno" value="tarde" />
+            Tarde
+          </label>
+
+          <label>
+            <input type="radio" name="turno" value="noite" />
+            Noite
+          </label>
+        </fieldset>
+
+        <!-- CHECKBOX -->
+        <fieldset>
+          <legend>Áreas de interesse:</legend>
+
+          <label>
+            <input type="checkbox" name="interesse" value="html" />
+            HTML5
+          </label>
+
+          <label>
+            <input type="checkbox" name="interesse" value="css" />
+            CSS3
+          </label>
+
+          <label>
+            <input type="checkbox" name="interesse" value="javascript" />
+            JavaScript
+          </label>
+
+          <label>
+            <input type="checkbox" name="interesse" value="games" />
+            Desenvolvimento de Games
+          </label>
+        </fieldset>
+
+        <!-- URL -->
+        <label for="site">Seu site:</label>
+
+        <input
+          type="url"
+          id="site"
+          name="site"
+          placeholder="https://seusite.com"
+        />
+
+        <!-- TEL -->
+        <label for="telefone">Telefone:</label>
+
+        <input
+          type="tel"
+          id="telefone"
+          name="telefone"
+          placeholder="(00) 00000-0000"
+        />
+
+        <!-- FILE -->
+        <label for="arquivo"> Enviar arquivo: </label>
+
+        <input type="file" id="arquivo" name="arquivo" />
+
+        <!-- TEXTAREA -->
+        <label for="mensagem"> Mensagem: </label>
+
+        <textarea
+          id="mensagem"
+          name="mensagem"
+          rows="5"
+          placeholder="Digite sua mensagem..."
+        ></textarea>
+
+        <!-- BUTTONS -->
+
+        <div class="botoes">
+          <button type="submit" class="btn-enviar">Enviar</button>
+
+          <button type="reset" class="btn-limpar">Limpar</button>
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <p>Curso de HTML5 - 2026</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+/* CONFIGURAÇÕES GERAIS */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+}
+
+
+/* CABEÇALHO */
+
+header {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    color: #00e88f;
+}
+
+
+/* CONTEÚDO */
+
+main {
+    background-color: white;
+
+    width: 80%;
+    max-width: 700px;
+
+    margin: 30px auto;
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+main h2 {
+    text-align: center;
+    color: #333;
+}
+
+
+/* FORMULÁRIO */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* CAMPOS */
+
+input,
+select,
+textarea {
+    padding: 12px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    box-sizing: border-box;
+}
+
+
+/* FOCO */
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #00e88f;
+}
+
+
+/* FIELDSET */
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    padding: 15px;
+
+    margin-top: 10px;
+}
+
+fieldset label {
+    margin-right: 20px;
+}
+
+
+/* BOTÕES */
+
+.botoes {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.btn-enviar {
+    background-color: #00e88f;
+    color: #111;
+}
+
+.btn-limpar {
+    background-color: #ddd;
+    color: #333;
+}
+
+button:hover {
+    transform: scale(1.03);
+}
+
+
+/* RODAPÉ */
+
+footer {
+    background-color: #222;
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-top: 30px;
+}
+
+/* NOVO RESULTADO JAVASCRIPT */
+
+#resultado {
+    margin-top: 25px;
+    padding: 20px;
+
+    background-color: #e8fff5;
+
+    border-left: 5px solid #00e88f;
+
+    border-radius: 8px;
+
+    text-align: left;
+}
+
+#resultado h3 {
+    color: #008f5a;
+}
