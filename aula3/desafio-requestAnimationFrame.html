@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio requestAnimationFrame</title>
+  </head>
+  <body>
+    <canvas
+      id="meu_canvas"
+      width="1200"
+      height="550"
+      style="background-color: black"
+    ></canvas>
+    <script>
+      let canvas = document.getElementById("meu_canvas");
+      let context = canvas.getContext("2d");
+
+      // Dados de tamanho e posição inicial da Xwing
+      let xwingX = 20;
+      let xWingY = 100;
+      let xwingLargura = 64;
+      let xwingAltura = 32;
+
+      // Dados da posição e tamanho da Death Star
+      let deathStarX = 800;
+      let deathStarY = 10;
+      let deathStarLargura = 300;
+      let deathStarAltura = 250;
+
+      // Posição Inicial
+      let anterior = new Date().getTime();
+      let imgProntas = 0;
+
+      // Carrega e anima imagens
+      function carregarEAnimar(caminho) {
+        let img = new Image();
+        img.src = caminho;
+        img.onload = () => {
+          imgProntas++;
+          if (imgProntas === 2) requestAnimationFrame(animarImg);
+        };
+        return img;
+      }
+
+      let imgXwing = carregarEAnimar("img/x-wing.png");
+      let imgDeathStar = carregarEAnimar("img/deathStar.png");
+
+      // Loop de animação
+      function animarImg() {
+        let agora = new Date().getTime();
+        let decorrido = agora - anterior;
+
+        // Limpar o Canvas
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Lógica X-wing
+        context.drawImage(imgXwing, xwingX, xWingY, xwingLargura, xwingAltura);
+        let velXwing = 100;
+        xwingX += (velXwing * decorrido) / 1000;
+        if (xwingX > canvas.width) xwingX = -xwingLargura;
+
+        // Lógica Death Star
+        context.drawImage(
+          imgDeathStar,
+          deathStarX,
+          deathStarY,
+          deathStarLargura,
+          deathStarAltura,
+        );
+        let velDeathStar = 20;
+        deathStarY += (velDeathStar * decorrido) / 1000;
+
+        // Atualiza o tempo para o próximo frame
+        anterior = agora;
+
+        requestAnimationFrame(animarImg);
+      }
+    </script>
+  </body>
+</html>

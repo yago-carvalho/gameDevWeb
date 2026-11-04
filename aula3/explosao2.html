@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explosão2</title>
+  </head>
+  <body>
+    <canvas id="meu_canvas" width="500" height="100"></canvas>
+    <script>
+      // Canvas e contexto
+      let canvas = document.getElementById("meu_canvas");
+      let context = canvas.getContext("2d");
+
+      // Carregar imagem
+      let imagem = new Image();
+      imagem.src = "img/explosao.jpeg";
+      imagem.onload = function () {
+        context.drawImage(
+          imagem,
+          80,
+          10,
+          56,
+          65, // Área de recorte
+          20,
+          20,
+          60,
+          65, // Desenho no canvas
+        );
+        context.drawImage(
+          imagem,
+          150,
+          10,
+          56,
+          65, // Área de recorte
+          80,
+          20,
+          60,
+          65, // Desenho no canvas
+        );
+      };
+    </script>
+  </body>
+</html>

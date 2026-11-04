@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Método requestAnimationFrame Ovni 2</title>
+  </head>
+  <body>
+    <canvas id="meu_canvas" width="400" height="300"></canvas>
+    <script>
+      let canvas = document.getElementById("meu_canvas");
+      let context = canvas.getContext("2d");
+
+      // Dados da posição e e tamanho da imagem
+      let x = 20;
+      let y = 100;
+
+      let largura = 64;
+      let altura = 32;
+
+      // Carrega imagem
+      let imagem = new Image();
+      imagem.src = "img/nave.jpeg";
+
+      // Momento Inicial
+      let anterior = new Date().getTime();
+
+      // Quando a imagem carregar, iniciar a animação
+      imagem.onload = function () {
+        requestAnimationFrame(mexerOvni);
+      };
+
+      // Função de animação
+      function mexerOvni() {
+        // Momento inicial
+        let agora = new Date().getTime();
+
+        // Diferença de tempo
+        let decorrido = agora - anterior;
+
+        // Limpar o Canvas
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Desenhar Ovni
+        context.drawImage(imagem, x, y, largura, altura);
+
+        // Velocidade Horizontal
+        let velocidade = 100;
+
+        //Movimento para a direita
+        x += (velocidade * decorrido) / 1000;
+
+        // Verificar se chegou à borda direita
+        if (x > canvas.width) {
+          x = -d;
+        }
+
+        // Atualizar o tempo
+        anterior = agora;
+
+        //Solicitar o próximo frame
+        requestAnimationFrame(mexerOvni);
+      }
+    </script>
+  </body>
+</html>
