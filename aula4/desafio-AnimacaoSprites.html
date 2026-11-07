@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio: Desafio Animação Sprites</title>
+    <script src="animacao.js"></script>
+    <script src="bola.js"></script>
+  </head>
+
+  <body>
+    <canvas id="canvas_animacao" width="500" height="500"></canvas>
+    <script>
+      // Referências para o Canvas
+      let canvas = document.getElementById("canvas_animacao");
+      let context = canvas.getContext("2d");
+
+      // Criando alguns sprites
+      let bola1 = new Bola(context);
+      bola1.x = 100;
+      bola1.y = 200;
+      bola1.velocidadeX = 4;
+      bola1.velocidadeY = -3;
+      bola1.cor = "red";
+      bola1.raio = 20;
+
+      let bola2 = new Bola(context);
+      bola2.x = 200;
+      bola2.y = 100;
+      bola2.velocidadeX = -3;
+      bola2.velocidadeY = 5;
+      bola2.cor = "blue";
+      bola2.raio = 30;
+
+      let bola3 = new Bola(context);
+      bola3.x = 300;
+      bola3.y = 250;
+      bola3.velocidadeX = -9;
+      bola3.velocidadeY = 8;
+      bola3.cor = "green";
+      bola3.raio = 45;
+
+      function SpriteNave(context, imagem) {
+        this.context = context;
+        this.imagem = imagem;
+        this.x = 0;
+        this.y = 0;
+        this.velocidadeX = 0;
+        this.velocidadeY = 0;
+      }
+
+      SpriteNave.prototype = {
+        atualizar: function () {
+          let ctx = this.context;
+          if (this.x < 0 || this.x + this.imagem.width > ctx.canvas.width)
+            this.velocidadeX *= -1;
+          if (this.y < 0 || this.y + this.imagem.height > ctx.canvas.height)
+            this.velocidadeY *= -1;
+
+          this.x += this.velocidadeX;
+          this.y += this.velocidadeY;
+        },
+        desenhar: function () {
+          this.context.drawImage(this.imagem, this.x, this.y);
+        },
+      };
+
+      let imgNave = new Image();
+      imgNave.src = "img/nave.jpeg";
+
+      imgNave.onload = function () {
+        let nave = new SpriteNave(context, imgNave);
+        nave.x = 250;
+        nave.y = 250;
+        nave.velocidadeX = 4;
+        nave.velocidadeY = -4;
+
+        animacao.novoSprite(nave);
+
+        // Apenas ligamos a animação depois que o navegador baixou a imagem
+        animacao.ligar();
+      };
+
+      //Criando o loop de animação
+      let animacao = new Animacao(context);
+      animacao.novoSprite(bola1);
+      animacao.novoSprite(bola2);
+      animacao.novoSprite(bola3);
+
+      // "Ligar" a animação
+      animacao.ligar();
+    </script>
+  </body>
+</html>

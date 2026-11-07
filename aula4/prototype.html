@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O prototype</title>
+    <script src="carro.js"></script>
+  </head>
+  <body>
+    <script>
+      let meuCarro = new Carro("vermelho", 250);
+      document.write(
+        `${meuCarro.cor} 1 : Velocidade atual ${meuCarro.velocAtual} </br>`,
+      );
+      document.write(
+        `${meuCarro.cor} 2 : Velocidade máxima ${meuCarro.velocMaxima} </br>`,
+      );
+      document.write(
+        `${meuCarro.acelerar(velocAtual, 10)};${meuCarro.acelerar(velocAtual, 10)}`,
+      );
+    </script>
+  </body>
+</html>
